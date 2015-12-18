@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Process-killer : This script is scheduled on crontab and then searches, finds and kills the processes running longer than expected. For example kill selenium process if it continues more than 30 minutes! So there will be no process stucks.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Process-killer</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ieak/process-killer">View on GitHub</a>
+
+          <h1 id="project_title">Process-killer</h1>
+          <h2 id="project_tagline">This script is scheduled on crontab and then searches, finds and kills the processes running longer than expected. For example kill selenium process if it continues more than 30 minutes! So there will be no process stucks.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ieak/process-killer/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ieak/process-killer/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a id="welcome-to-process-killer-page" class="anchor" href="#welcome-to-process-killer-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Process Killer Page</h3>
+
+<p>This Linux Bash script will make easier life for systems administrators. If you have so many scheduled tasks on your crontab and sometimes one of the process get stuck and prevent other processes from running, you can use this script to kill stuck process.</p>
+
+<h3>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to Use</h3>
+
+<ol>
+<li>Download the process-killer file.</li>
+<li>Extract it and locate on your Linux PC. (For example: /root/ieak/scripts/processKiller.sh)</li>
+<li>Enter your troubled process name next to "PROCESS_TO_KILL" field. (For example: PROCESS_TO_KILL=selenium)</li>
+<li>Enter maximum running time interval next to "KILLTIME" field. (For example: KILLTIME=30)</li>
+<li>If you do not change log file will be generated on "/tmp/KILLER.LOG".</li>
+<li>Save your settings.</li>
+<li>Schedule the script on crontab. Example case as followings:</li>
+</ol>
+
+<blockquote>
+<blockquote>
+<p>crontab -e</p>
+
+<p>*/5 0,9 * * * /root/ieak/scripts/processKiller.sh</p>
+</blockquote>
+</blockquote>
+
+<p>(This crontab line refer that this script will be run in every 5 minutes at every night between 00.00 and 09.00)</p>
+
+<h3>
+<a id="expected-results" class="anchor" href="#expected-results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Expected Results</h3>
+
+<p>According to example cases:
+Script will run in every 5 minutes to find selenium process running more than 30 minutes.</p>
+
+<ol>
+<li><p>When found, it will kill the selenium process.</p></li>
+<li><p>When not found, it will wait 5 minutes and run again.</p></li>
+<li><p>Results may be checked from the log file: "/tmp/KILLER.LOG"</p></li>
+</ol>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>In 2014, iffet and Ahmet Kuruköse (<a href="https://github.com/ieak" class="user-mention">@ieak</a>) developed Kill Process script.</p>
+
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out our <a href="https://github.com/ieak/process-killer/blob/master/README.md">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Process-killer maintained by <a href="https://github.com/ieak">ieak</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
